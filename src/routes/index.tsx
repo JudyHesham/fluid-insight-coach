@@ -193,7 +193,8 @@ function CoachingPlayground() {
   const [selected, setSelected] = useState(0);
   const [coaching, setCoaching] = useState(true);
   const [practiced, setPracticed] = useState(false);
-  const drill = drills[selected];
+  const drill = drills[selected] ?? drills[0];
+  if (!drill) return null;
   const Icon = drill.icon;
   return (
     <div className="coach-layout">
